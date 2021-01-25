@@ -1,7 +1,7 @@
 % Intro Options
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{resume}[My Resume Template]
-\LoadClass{article}
+\LoadClass[9pt]{article}
 
 % Package Imports
 \RequirePackage{geometry}
@@ -15,8 +15,8 @@
 \RequirePackage[sfdefault]{roboto}
 
 % Define Ratios
-\newcommand{\lcol}{0.75}
-\newcommand{\rcol}{0.25}
+\newcommand{\lcol}{0.78}
+\newcommand{\rcol}{0.22}
 
 % Custom Lengths
 \newlength{\sidebarwidth}
@@ -25,8 +25,8 @@
 \newlength{\colarea}
 
 % Define Lengths and Set Margins
-\setlength{\headerheight}{1.2in}
-\setlength{\margin}{0.3in}
+\setlength{\headerheight}{1.05in}
+\setlength{\margin}{0.23in}
 
 \setlength{\colarea}{\dimexpr \paperwidth - 4\margin}
 \setlength{\columnsep}{2\margin}
@@ -86,17 +86,17 @@
 % Section Styling
 \titleformat{\section}{
     \color{sectiontext}
-    \Large\bfseries
+    \large\bfseries
 }{}{0em}{}[\hrule height 0.1cm]
 
 \titleformat{\subsection}{
     \color{subsectiontext}
-    \normalsize\bfseries\uppercase
+    \small\bfseries\uppercase
 }{}{0em}{}
 
 \titleformat{\subsubsection}{
     \color{subsectiontext}
-    \normalsize
+    \small
 }{}{0em}{}
 
 % Timeline Commands
@@ -106,7 +106,7 @@
     \color{maintext}
     \subsubsection{#2} 
     \vspace{-5pt}
-    \small
+    \footnotesize
     \notblank{#3}{\emph{#3}}{}
     \notblank{#1}{\hfill \emph{#1}}{}
     \notblank{#4}{
@@ -114,6 +114,7 @@
             \forcsvlist\additem{#4}
         \end{itemize}
     }{}
+    \vspace{-5pt}
 }
 
 \newcommand{\compact}[4][]{
@@ -128,6 +129,7 @@
             \forcsvlist\additem{#4}
         \end{itemize}
     }{}
+    \vspace{-5pt}
 }
 
 % Name command
@@ -137,6 +139,6 @@
     \centering{ \fontsize{35}{42}\selectfont #1 }\\
     \vspace{5pt}
     \color{headersubtext}
-    \centering{ \normalsize #2 }
+    \centering{ \small #2 }
     \end{minipage}
 }
